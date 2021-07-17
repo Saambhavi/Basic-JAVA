@@ -1,0 +1,30 @@
+# String Manipulation
+# for given length and string, store the reverse followed by number of the character in string with maximum number, i.e. for a-z - 1-26 and the original string with using character arrays.
+# display the final string.
+# INPUT: 5 hello
+# OUTPUT: olleh15hello
+
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+      ArrayList<Integer> sc=new ArrayList<Integer>();
+      Scanner scan=new Scanner(System.in);
+      int n=Math.abs(scan.nextInt());
+      scan.nextLine();
+      String t=scan.nextLine();
+      StringBuffer s=new StringBuffer();
+      s.append(t);
+      s.reverse();
+      for(int i=0;i<n;i++)
+      {
+          sc.add(t.charAt(i)-96);
+      }
+        int max=0;
+      for(int i=0;i<sc.size();i++)
+      max=Math.max(max,sc.get(i));
+      
+      s.append(Integer.toString(max));
+      s.append(t);
+      System.out.println(s.toString());
+    }
+}
